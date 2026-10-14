@@ -39,11 +39,6 @@ class WordCount {
         return input;
     }
 
-    String [][] Sort(String[][] input) {
-        String[][] sorted = Sort_count(input);
-        return sorted;
-    }
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
@@ -56,19 +51,8 @@ class WordCount {
         String[][] word_count = obj.Count(cleaned_input);
         String[][] sorted_word_count = obj.Sort_count(word_count);
 
-        String[][] top3 = new String[3][2];
-
-        for(int i=0; i<3; i++) {
-            top3[i][0] = sorted_word_count[i][0];
-            top3[i][1] = sorted_word_count[i][1];
-        }
-
-        String[][] final_output = obj.Sort(top3);
-
-        System.out.println("Top 3 frequentwords:");
-
         for(int  i=0; i<3; i++) {
-            System.out.println(final_output[i][0] + " : " + final_output[i][1]);
+            System.out.println(sorted_word_count[i][0] + " : " + sorted_word_count[i][1]);
         }
 
     }
